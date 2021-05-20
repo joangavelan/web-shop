@@ -39,6 +39,8 @@ const Cart = ({ cart,  handleUpdateCartQty, handleRemoveFromCart, handleEmptyCar
                 Empty card
             </Button>
             <Button 
+              component={Link}
+              to="/checkout"
               className={classes.checkOut} 
               size="large"
               type="button" 
