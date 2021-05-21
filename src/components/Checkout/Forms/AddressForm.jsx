@@ -49,21 +49,6 @@ const AddressForm = ({ checkoutToken }) => {
     if(shippingSubdivision) fetchShippingOptions(checkoutToken?.id, shippingCountry, shippingSubdivision)
   }, [shippingSubdivision]);
 
-
-  const fetchUsOptions = async (checkoutTokenId, country, region = null) => {
-    const options = await commerce.checkout.getShippingOptions(checkoutTokenId, { country, region });
-    console.log(options);
-  }
-
-  // console.log(shippingCountry)
-  // console.log(shippingSubdivisions)
-  // console.log(shippingSubdivision)
-
-  useEffect(() => {
-    fetchUsOptions(checkoutToken.id, 'US', 'CA');
-  }, []);
-
-
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>Shipping Address</Typography>
