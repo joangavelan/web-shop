@@ -21,6 +21,7 @@ const Checkout = ({ cart }) => {
         const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' });
         setCheckoutToken(token);
       } catch (err) {
+        console.log(err);
       } 
     }
     generateToken();
@@ -38,7 +39,7 @@ const Checkout = ({ cart }) => {
 
   const CheckoutBody = () => {
     if(steps[activeStep] === 'Shipping Address') return <AddressForm checkoutToken={checkoutToken} next={next}/>
-    if(steps[activeStep] === 'Payment Details') return <PaymentForm />
+    if(steps[activeStep] === 'Payment Details') return <PaymentForm checkoutToken={checkoutToken}/>
     if(activeStep === steps.length) return <Confirmation />
   }
 
