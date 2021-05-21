@@ -9,8 +9,6 @@ const Cart = ({ cart,  handleUpdateCartQty, handleRemoveFromCart, handleEmptyCar
   const isEmpty = !cart?.line_items?.length;
   const classes = useStyles();
 
-  console.log(cart)
-
   const EmptyCart = () => (
     <Typography variant="subtitle1">
       You have no items in your shopping cart, <Link to="/" className={classes.link}>start adding some!</Link>
