@@ -9,12 +9,9 @@ const CustomInput = ({ name, label }) => {
   return (
     <Grid item xs={12} sm={6}>
       <Controller 
-        render={({ field }) => <TextField {...field} label={label}/>}
-        control={control}
-        fullWidth
-        name={name}
-        required
-      />
+        render={({ field }) => <TextField {...field} fullWidth required label={label}/>}
+        control={control} 
+        name={name}/>
     </Grid>
   )
 }
