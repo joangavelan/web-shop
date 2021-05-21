@@ -3,8 +3,9 @@ import { InputLabel, Select, MenuItem, Button, Grid, Typography } from '@materia
 import { useForm, FormProvider } from 'react-hook-form'
 import CustomInput from '../utils/CustomInput'
 import { commerce } from '../../../lib/commerce'
+import { Link } from 'react-router-dom'
 
-const AddressForm = ({ checkoutToken }) => {
+const AddressForm = ({ checkoutToken, next }) => {
 
   const [shippingCountries, setShippingCountries] = useState([]);
   const [shippingCountry, setShippingCountry] = useState('');
@@ -53,7 +54,7 @@ const AddressForm = ({ checkoutToken }) => {
     <React.Fragment>
       <Typography variant="h6" gutterBottom>Shipping Address</Typography>
       <FormProvider {...methods}>
-        <form>
+        <form onSubmit={methods.handleSubmit((data) => next({...data, shippingCountry, shippingSubdivision, shippingOption}))}>
           <Grid container spacing={3}>
             <CustomInput label="First Name" name="firstName"/>
             <CustomInput label="Last Name" name="lastName"/>
@@ -96,6 +97,11 @@ const AddressForm = ({ checkoutToken }) => {
               </Select>
             </Grid>
           </Grid>
+          <br/>
+          <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <Button component={Link} to="/cart" variant="outlined">Back to Cart</Button>
+            <Button type="submit" variant="contained" color="primary">Next</Button>
+          </div>
         </form>
       </FormProvider>
     </React.Fragment>
