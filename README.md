@@ -1,4 +1,4 @@
-# Web-shop
+# Web-Shop
 
 > A simple yet fully functional web-shop application built with Commerce.js and the Stripe API.
 
