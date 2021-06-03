@@ -8,5 +8,6 @@ Technologies and services used in the development process:
 - [React Router](https://reactrouter.com/)
 - [Commerce.js](https://commercejs.com/)
 - [Stripe API](https://stripe.com/es-us)
+- [Material UI](https://material-ui.com/)
 
 <a href="https://web-shop-jg.netlify.app/"><img src="https://i.ibb.co/ssJSXhv/web-shop.png" alt="web-shop" border="0"></a>
